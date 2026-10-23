@@ -7,10 +7,16 @@
 
   const CELL = 22;          // size of one square in pixels
   const STEP_MS = 70;       // time between moves (lower = faster)
-  const BG = '#eef1f6';
-  const HEAD = '#2459c4';
-  const BODY = '36, 89, 196'; // rgb of the body color
-  const FOOD = '#e05a4f';
+  // Colors come from the CSS variables in style.css (so dark mode works)
+  let BG, HEAD, BODY, FOOD;
+  function readColors() {
+    const css = getComputedStyle(document.documentElement);
+    BG = css.getPropertyValue('--game-bg').trim();
+    HEAD = css.getPropertyValue('--game-head').trim();
+    BODY = css.getPropertyValue('--game-body').trim();
+    FOOD = css.getPropertyValue('--game-food').trim();
+  }
+  readColors();
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -144,6 +150,12 @@
     if (reduceMotion) return; // show a still picture instead of animating
     timer = setInterval(() => { step(); draw(); }, STEP_MS);
   }
+
+  // Redraw with new colors when the system switches between light and dark
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    readColors();
+    draw();
+  });
 
   let resizeTimer;
   window.addEventListener('resize', () => {
