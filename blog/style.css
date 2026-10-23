@@ -20,6 +20,21 @@ body {
 
 a { color: var(--accent); }
 
+/* ---------- Snake background ---------- */
+#snake-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Keep the text readable on top of the game */
+.site-header,
+main,
+.site-footer {
+  background: rgba(255, 255, 255, 0.88);
+}
+
 /* ---------- Header ---------- */
 .site-header {
   max-width: 40rem;
