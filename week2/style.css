@@ -1,0 +1,49 @@
+/* Extra Task 1: more style with CSS */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #f3ead2;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.wrap { max-width: 1100px; margin: 0 auto; background: rgba(8, 12, 30, 0.82); }
+
+/* Banner */
+header img { display: block; width: 100%; height: 220px; object-fit: cover; }
+
+/* Menu list (nav) */
+nav { background: #e8a33d; }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; }
+/* Extra Task 3: no underline on links */
+a { text-decoration: none; color: #e8a33d; }
+nav a { display: block; padding: 12px 18px; color: #1b1b2f; font-weight: bold; }
+nav a:hover, nav a:focus-visible { background: #1b1b2f; color: #e8a33d; }
+
+/* Extra Task 2: menu to the LEFT of the content */
+.layout { display: flex; }
+.side { width: 190px; flex-shrink: 0; background: #14193a; }
+.side ul { flex-direction: column; }
+.side a { color: #f3ead2; border-bottom: 1px solid #2a3068; font-weight: normal; }
+.side a:hover, .side a:focus-visible { background: #e8a33d; color: #1b1b2f; }
+main { flex: 1; padding: 24px; }
+
+h1 { margin-top: 0; font-size: 2rem; }
+.intro { max-width: 60ch; line-height: 1.6; }
+#hoverText { font-size: 1.4rem; font-weight: bold; cursor: pointer; }
+
+.planets { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin: 24px 0; }
+.planets figure { margin: 0; scroll-margin-top: 12px; }
+.planets img { width: 100%; height: 150px; object-fit: cover; display: block; border: 2px solid #2a3068; }
+.planets figcaption { padding: 6px 0; }
+
+.buttons { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.buttons input[type="image"] { width: 160px; height: 90px; object-fit: cover; border: 2px solid #e8a33d; cursor: pointer; }
+
+footer { background: #1b2a6b; padding: 14px; text-align: center; }
+
+@media (max-width: 700px) {
+  .layout { flex-direction: column; }
+  .side { width: 100%; }
+  .side ul { flex-direction: row; }
+}

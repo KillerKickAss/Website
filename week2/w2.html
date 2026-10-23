@@ -1,15 +1,109 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Week 2</title>
-        <link rel="stylesheet" href="styles.css"
-    </head>
-    <body>
-        <div id="banner">
-            <img scr="" alt="banner">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Solar System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- Task 2.2: bgcolor | Task 2.3: background image on the body tag -->
+
+<body bgcolor="#0a0e27" background="images/jupiterMain.jpg">
+    <div class="wrap">
+
+        <!-- Task 2.1: Banner (HTML5 semantic <header>) -->
+        <header>
+            <img src="images/solar.jpeg" alt="Illustrated poster of the solar system">
+        </header>
+
+        <!-- Menu list across the top -->
+        <nav>
+            <ul>
+                <li><a href="w2.html">Home</a></li>
+                <li><a href="info.html">Team Page</a></li>
+            </ul>
+        </nav>
+
+        <div class="layout">
+            <!-- Extra Task 2: menu on the left of the content -->
+            <nav class="side">
+                <ul>
+                    <li><a href="#mercury">Mercury</a></li>
+                    <li><a href="#venus">Venus</a></li>
+                    <li><a href="#earth">Earth</a></li>
+                    <li><a href="#mars">Mars</a></li>
+                    <li><a href="#jupiter">Jupiter</a></li>
+                    <li><a href="#saturn">Saturn</a></li>
+                    <li><a href="#neptune">Neptune</a></li>
+                    <li><a href="#pluto">Pluto</a></li>
+                </ul>
+            </nav>
+
+            <main>
+                <section>
+                    <h1>The Solar System</h1>
+                    <p class="intro">Adventure and science at the final frontier. Pick a world from the menu, or scroll
+                        down to meet them all.</p>
+
+                    <!-- Additional Tasks 1 and 2: colour change on mouse over / mouse out -->
+                    <p id="hoverText" onmouseover="changeColour('#ff6b4a')" onmouseout="changeColour('#f3ead2')">Hover
+                        over me to change my colour!</p>
+
+                    <!-- Task 2.4: link to another page -->
+                    <p><a href="info.html">Go to Team Page</a></p>
+                </section>
+
+                <section class="planets">
+                    <figure id="mercury"><img src="images/mercury.jpg" alt="Mercury">
+                        <figcaption>Mercury – the swiftest planet</figcaption>
+                    </figure>
+                    <figure id="venus"><img src="images/venus.jpg" alt="Venus">
+                        <figcaption>Venus – the veiled planet</figcaption>
+                    </figure>
+                    <figure id="earth"><img src="images/earth.jpg" alt="Earth">
+                        <figcaption>Earth – the azure world</figcaption>
+                    </figure>
+                    <figure id="mars"><img src="images/mars.jpeg" alt="Mars">
+                        <figcaption>Mars – the red planet</figcaption>
+                    </figure>
+                    <figure id="jupiter"><img src="images/jupiter.jpeg" alt="Jupiter">
+                        <figcaption>Jupiter – the giant gas world</figcaption>
+                    </figure>
+                    <figure id="saturn"><img src="images/saturn.jpg" alt="Saturn">
+                        <figcaption>Saturn – the ringed giant</figcaption>
+                    </figure>
+                    <figure id="neptune"><img src="images/neptune.jpeg" alt="Neptune">
+                        <figcaption>Neptune – the storm world</figcaption>
+                    </figure>
+                    <figure id="pluto"><img src="images/pluto.jpeg" alt="Pluto">
+                        <figcaption>Pluto – the distant snowy world</figcaption>
+                    </figure>
+                </section>
+
+                <!-- Additional Task 3: image used as a button -->
+                <section class="buttons">
+                    <input type="image" src="images/earth.jpg" alt="Go to the team page" onclick="callOtherPage()">
+                    <span>Click the image to open the Team Page</span>
+                </section>
+            </main>
         </div>
-        <div id="menuList"></div>
-        <div id="content"></div>
-        <div id="footer"></div>
-    </body>
+
+        <footer>
+            <p>COMP09090 JavaScript Games – Week 2 Lab</p>
+        </footer>
+    </div>
+
+    <script>
+        // Additional Tasks 1 and 2
+        function changeColour(colour) {
+            document.getElementById("hoverText").style.color = colour;
+        }
+        // Additional Task 3
+        function callOtherPage() {
+            window.location = "info.html";
+        }
+    </script>
+</body>
+
 </html>

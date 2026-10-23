@@ -1,0 +1,108 @@
+/* ---------- Basics ---------- */
+:root {
+  --text: #1f2933;
+  --muted: #6b7785;
+  --accent: #2459c4;
+  --line: #e3e7ec;
+  --bg: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+a { color: var(--accent); }
+
+/* ---------- Header ---------- */
+.site-header {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.site-header h1 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.tagline {
+  margin: 0.25rem 0 1.25rem;
+  color: var(--muted);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  text-decoration: underline;
+}
+
+/* ---------- Posts ---------- */
+main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+article {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+article h2 {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.25;
+}
+
+.date {
+  margin: 0.25rem 0 1.25rem;
+  color: var(--muted);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+}
+
+article p {
+  margin: 0 0 1rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  color: var(--muted);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 480px) {
+  body { font-size: 1rem; }
+  .site-header h1 { font-size: 1.6rem; }
+  article h2 { font-size: 1.35rem; }
+}
