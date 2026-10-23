@@ -1,10 +1,35 @@
 /* ---------- Basics ---------- */
 :root {
+  color-scheme: light dark;
   --text: #1f2933;
   --muted: #6b7785;
   --accent: #2459c4;
   --line: #e3e7ec;
   --bg: #ffffff;
+  --panel: rgba(255, 255, 255, 0.88);
+
+  /* Snake game colors (read by script.js) */
+  --game-bg: #eef1f6;
+  --game-head: #2459c4;
+  --game-body: 36, 89, 196;
+  --game-food: #e05a4f;
+}
+
+/* Dark mode: follows the visitor's system setting */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #e6e9ee;
+    --muted: #9aa5b4;
+    --accent: #7aa2f7;
+    --line: #2a313b;
+    --bg: #12161c;
+    --panel: rgba(18, 22, 28, 0.88);
+
+    --game-bg: #0b0e12;
+    --game-head: #7aa2f7;
+    --game-body: 122, 162, 247;
+    --game-food: #ff7b72;
+  }
 }
 
 * { box-sizing: border-box; }
@@ -32,7 +57,7 @@ a { color: var(--accent); }
 .site-header,
 main,
 .site-footer {
-  background: rgba(255, 255, 255, 0.88);
+  background: var(--panel);
 }
 
 /* ---------- Header ---------- */
